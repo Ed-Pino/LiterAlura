@@ -4,96 +4,88 @@
 
 ## 📁 Índice
 
-* [📚 Título e imagen de portada](#-literalura---catálogo-de-libros-cli)
-* [🏅 Insignias](#-insignias)
-* [📁 Índice](#-índice)
-* [💾 Descripción del proyecto](#-descripción-del-proyecto)
-* [🟢 Estado del proyecto](#-estado-del-proyecto)
-* [✨ Características de la aplicación y demostración](#-características-de-la-aplicación-y-demostración)
-* [🚀 Acceso al proyecto](#-acceso-al-proyecto)
-* [💪 Tecnologías utilizadas](#-tecnologías-utilizadas)
-* [👥 Personas Contribuyentes](#-personas-contribuyentes)
-* [👨‍💻 Personas Desarrolladoras del Proyecto](#-personas-desarrolladoras-del-proyecto)
-* [📄 Licencia](#-licencia)
-* [✅ Conclusión](#-conclusión)
+- [📚 Título e imagen de portada](#-literalura---catálogo-de-libros-cli)
+- [🏅 Insignias](#-insignias)
+- [📁 Índice](#-índice)
+- [💾 Descripción del proyecto](#-descripción-del-proyecto)
+- [🟢 Estado del proyecto](#-estado-del-proyecto)
+- [✨ Características implementadas](#-características-implementadas)
+- [🚀 Acceso al proyecto](#-acceso-al-proyecto)
+- [💻 Vista web con Thymeleaf (en desarrollo)](#-vista-web-con-thymeleaf-en-desarrollo)
+- [💪 Tecnologías utilizadas](#-tecnologías-utilizadas)
+- [👥 Personas Contribuyentes](#-personas-contribuyentes)
+- [👨‍💻 Personas Desarrolladoras del Proyecto](#-personas-desarrolladoras-del-proyecto)
+- [📄 Licencia](#-licencia)
+- [✅ Conclusión](#-conclusión)
 
 ---
 
 ## 💾 Descripción del Proyecto
 
-**LiterAlura** es una aplicación de consola desarrollada en Java que permite buscar, registrar y consultar libros utilizando la API pública de Gutendex. Los datos se almacenan en una base de datos PostgreSQL mediante Spring Data JPA. Es ideal para usuarios que desean explorar literatura clásica y gestionar un catálogo de libros de forma sencilla y eficiente desde la terminal.
+**LiterAlura** es una aplicación Java basada en consola que permite explorar literatura clásica mediante la API de [Gutendex](https://gutendex.com/). Integra una base de datos PostgreSQL utilizando Spring Boot y JPA para almacenar los libros consultados.
 
 ---
 
 ## 🟢 Estado del Proyecto
 
-El proyecto se encuentra en una fase funcional con las principales características implementadas. Se planean mejoras en la interfaz, filtros avanzados y exportación de datos en futuras versiones.
+✔️ Proyecto en funcionamiento (CLI)  
+🛠 En desarrollo: interfaz web con Thymeleaf  
+📌 Futuras mejoras: filtros dinámicos, exportación de datos, integración web completa.
 
 ---
 
-## ✨ Características de la Aplicación y Demostración
+## ✨ Características Implementadas
 
-* 🔍 Buscar libros por título desde la API de Gutendex
-* 💾 Guardar libros consultados en una base de datos local
-* 📃 Listar todos los libros registrados
-* 🧑‍💼 Filtrar por autor o por idioma
-* 📊 Mostrar la cantidad de libros por idioma
-* 📅 Consultar autores vivos en un año determinado
-
-Ejemplo de uso:
-*** LiterAlura - Catálogo de Libros ***
-
-Buscar libro por título
-
-Listar libros registrados
-
-Listar libros por idioma
-
-Buscar libros por autor
-
-Mostrar cantidad de libros por idioma
-
-Mostrar autores vivos en un año
-
-Salir
-Seleccione una opción:
-
-yaml
-Copy
-Edit
+- 🔍 Buscar libros por título desde Gutendex y guardarlos en la base de datos  
+- 💾 Verificar si un libro ya fue registrado  
+- 📃 Listar todos los libros almacenados  
+- 🌐 Buscar libros por idioma  
+- 👤 Buscar libros por autor (ignorando mayúsculas/minúsculas)  
+- 📊 Mostrar cantidad total de libros agrupados por idioma  
+- 📅 Consultar autores vivos en un año determinado  
+- ♻️ Evitar duplicidad de autores al buscar por año  
+- 👨‍🏫 Visualizar autores con nombre, nacimiento y defunción (o “vivo”)  
+- 📦 Uso de DTOs para mostrar solo información relevante  
+- 🧱 Arquitectura MVC: Controller, Service, Repository  
+- 🌐 Integración inicial con frontend web usando Thymeleaf
 
 ---
 
 ## 🚀 Acceso al Proyecto
 
-1. Clona el repositorio:
+### 🔧 Requisitos
+
+- Java 17+
+- Maven
+- PostgreSQL
+
+### 🧬 Clonar y configurar
 
 ```bash
-git clone https://github.com/tu-usuario/literalura.git
-cd literalura
-Asegúrate de tener instalado:
+git clone https://github.com/Ed-Pino/LiterAlura.git
+cd LiterAlura
 
-Java 17+
-
-Maven
-
-PostgreSQL (y crea la base de datos alura_series)
-
-Configura las credenciales en application.properties:
-
-properties
-Copy
-Edit
+Crea la base de datos alura_series en PostgreSQL y configura:
+# src/main/resources/application.properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/alura_series
 spring.datasource.username=postgres
 spring.datasource.password=tu_contraseña
-Ejecuta el proyecto:
 
+▶️ Ejecutar el proyecto
 bash
-Copy
-Edit
 mvn clean install
-mvn spring-boot: run
+mvn spring-boot:run
+
+💻 Vista Web con Thymeleaf (en desarrollo)
+Se ha comenzado la implementación de vistas HTML con Thymeleaf. Próximamente podrás:
+
+Buscar libros desde el navegador
+
+Visualizar listado de libros y autores
+
+Realizar búsquedas por autor o idioma desde el frontend
+
+
 💪 Tecnologías utilizadas
 Java 17
 

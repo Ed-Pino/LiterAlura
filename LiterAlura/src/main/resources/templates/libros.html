@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Catálogo de Libros - LiterAlura</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>📚 Catálogo de Libros</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Idioma</th>
+        <th>Año Nacimiento</th>
+        <th>Año Muerte</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${libros}">
+        <td th:text="${book.title}">Título</td>
+        <td th:text="${book.author}">Autor</td>
+        <td th:text="${book.language}">Idioma</td>
+        <td th:text="${book.authorBirthYear}">Año Nacimiento</td>
+        <td th:text="${book.authorDeathYear}">Año Muerte</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
